@@ -1,0 +1,134 @@
+$grid-columns: 5;
+$sea-green: #5EA99D;
+$sand: #F9EFE2;
+$tan: #FBCBAC;
+$sky-blue: #5EAFBC;
+
+
+@import "../node_modules/bootstrap/scss/bootstrap";
+
+footer {
+    background-color: $tan;
+    color: black;
+    font-weight: 600;
+  }
+
+body {
+    background-color: antiquewhite;
+    overflow-x: hidden;
+    font-family: 'Peridot PE Variable';  
+}
+
+.btn {
+    font-size: 16px;
+    font-weight: bold;
+    text-transform: uppercase;
+    background-color: $sky-blue;
+    border-color: $sky-blue;
+}
+
+.btn:hover {
+    background-color: #478a94;
+    border-color: #478a94;
+}
+
+.btn-2 {
+    font-size: 16px;
+    text-transform: uppercase;
+    background-color: $sea-green;
+    border: solid 0px;
+    font-weight: 400;
+    border-radius: 5px;
+    padding: 5px 10px; 
+    pointer-events: none;
+}
+
+.transportation-info {
+    background-color: #5ea99dad;
+    color: white;
+    font-weight: 500;
+    font-size: 14px;
+    width: 40vw;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 2rem 
+}
+
+.nav-link {
+    background-color: $sky-blue;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.check-input {
+    width: 95%;
+}
+.party-select {
+    width: 15%;
+    padding-right: 2%;
+}
+
+.booking-search-div {
+    border: $sky-blue solid 2px;
+}
+
+.landing-image {
+    position: relative;
+    width: 100vw;
+    height: 50vh; 
+    overflow: hidden; 
+}
+
+/* Center and scale the video */
+.landing-image .video-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100vw;
+    height: 100vh;
+    transform: translate(-50%, -50%);
+}
+
+.landing-image video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transform: translate(-50%, -50%);
+    z-index: -1; 
+}
+
+.carousel-caption h5 {
+    color:black;
+    margin-bottom: 20%;
+    font-weight: 600;
+}
+
+.carousel-inner img {
+    width: 100%;
+    height: 40vh; 
+    object-fit: cover;
+    filter: brightness(0.75);
+}
+
+.accordion-body {
+    padding: 2rem 3rem;
+}
+
+.accordion-button {
+    background-color: $sea-green;
+    color: white;
+    font-weight: 600;
+}
+
+.card-img-container {
+    height: 30vh;
+    overflow: hidden;
+}
+.card-img-top {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}

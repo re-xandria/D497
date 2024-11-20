@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lodging | Visit Taniti</title>
+    <link rel="stylesheet" href="main.css">    
+</head>
+<body>
+    <script type="text/javascript" src="/src/main.js"></script>
+    <script type="module" src="/node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    <div class="container">
+        <section class="navigation mt-2 pt-4 text-center">
+            <a href="index.html">
+                <img src="/src/images-videos/logo.png" alt="Logo" style="width: 100px;">
+            </a>
+            <nav class="d-flex justify-content-center mt-4">
+                <ul class="navbar-nav d-flex flex-row">
+                    <li><a class="nav-link px-3 mx-2 text-white rounded" href="/src/lodging.html">Lodging</a></li>
+                    <li><a class="nav-link px-3 mx-2 text-white rounded" href="/src/transportation.html">Transportation</a></li>
+                    <li><a class="nav-link px-3 mx-2 text-white rounded" href="/src/events.html">Events</a></li>
+                    <li><a class="nav-link px-3 mx-2 text-white rounded" href="/src/food.html">Dining</a></li>
+                    <li><a class="nav-link px-3 mx-2 text-white rounded" href="/src/entertainment.html">Entertainment</a></li>
+                    <li><a class="nav-link px-3 mx-2 text-white rounded" href="/src/sights.html">Sightseeing</a></li>
+                    <li><a class="nav-link px-3 mx-2 text-white rounded" href="/src/index.html#faq">FAQ</a></li>
+                </ul>
+            </nav>
+        </section>
+
+        <section>
+            <div class="d-flex align-items-center justify-content-center gap-3 my-4">
+                <p class="mb-0">
+                    After booking your lodging arrangements, check out the transportation options to get to and around the island!
+                </p>
+                <a class="btn text-white" href="/src/transportation.html">Book Travel</a>
+            </div>
+        </section>
+        
+        <section class="booking-search mt-4">
+            <div class="container booking-search-div col-4 rounded p-3">
+                <form class="d-flex align-items-center">
+                    <div class="col-auto">
+                        <div class="input-group check-input">
+                            <span class="input-group-text">Check-In</span>
+                            <input type="date" class="form-control" id="check-in">
+                        </div>
+                    </div>
+                    <div class="col-auto">
+                        <div class="input-group check-input">
+                            <span class="input-group-text">Check-Out</span>
+                            <input type="date" class="form-control" id="check-out">
+                        </div>
+                    </div>
+                    <div class="input-group col-auto party-select">
+                            <select class="form-select" id="party-size">
+                                <option selected>Party Size</option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                                <option value="6">6</option>
+                                <option value="7">7</option>
+                                <option value="8">8</option>
+                                <option value="9">9</option>
+                                <option value="10">10+</option>
+                            </select> 
+                      </div>
+                    <div class="col">
+                        <a class="btn text-white w-100" onclick="storeDates()">Find Places to Stay</a>
+                        <!-- Add javascript that collects input info and displays it on lodging page -->
+                    </div>
+                </form>
+            </div>
+        </section>
+
+        <section class="lodging-results">
+            
+            <div class="container d-flex justify-content-between align-items-center mx-auto mt-5 col-4">
+                <div>
+                    <h2>Lodging</h2>
+                    <div>
+                        <span class="me-3" >10 Results Found</span>
+                        <span class="me-3" id="result-check-in">Check-In Date: </span>
+                        <span class="me-3" id="result-check-out">Check-Out Date: </span>
+                        <span id="result-party-size">Party Size: </span>
+                    </div>
+                </div>
+                <div>
+                    <button class="btn text-white mx-1">Filter</button>
+                    <button class="btn text-white primary mx-1">Sort</button>
+                </div>
+            </div>
+            
+            <div class="d-flex justify-content-center my-5">
+                <div class="row col-4 align-items-center ">
+                    <div class="d-flex justify-content-center align-items-center">
+                        <div class="flex-shrink-0 me-5">
+                            <img src="/src/images-videos/hotel-10.jpg" class="img-fluid" style="width: 27vw; height: 32vh;" alt="Hotel Image">
+                        </div>
+                        <div class="flex-grow-1">
+                            <h4>Sunset Sands Resort</h4>
+                            <h6>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="32" fill="#5EA99D" class="bi bi-geo-alt me-2" viewBox="0 0 16 18">
+                                    <path d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10m0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6"/>
+                                </svg>
+                                Oceanside Village
+                            </h6>
+                            <p class="py-3 pe-3">A luxurious, all-inclusive resort known for its beachfront villas and infinity pool overlooking the sunset. Perfect for honeymooners and travelers seeking a full-service experience.</p>
+                            <div class="d-inline-flex justify-content-between ">
+                                <span class="align-self-center">Starting as low as <b>$249</b> per night</span>
+                                <button class="btn text-white ms-5">Check Rates</button>
+                            </div>
+                        </div>
+                    </div>
+                    <hr class="mt-5" style="height:5px;border-width:0;;background-color:#5EA99D">
+                </div>
+            </div>
+    
+            <div class="d-flex justify-content-center my-3">
+                <div class="row col-4 align-items-center ">
+                    <div class="d-flex justify-content-center align-items-center">
+                        <div class="flex-shrink-0 me-5">
+                            <img src="/src/images-videos/hostel-1.jpg" class="img-fluid" style="width: 27vw; height: 32vh;" alt="Hotel Image">
+                        </div>
+                        <div class="flex-grow-1">
+                            <h4>Coconut Grove Hostel</h4>
+                                <h6>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="32" fill="#5EA99D" class="bi bi-geo-alt me-2" viewBox="0 0 16 18">
+                                        <path d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10m0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6"/>
+                                    </svg>
+                                    Hibiscus Hollow
+                                </h6>
+                            <p class="py-2">A budget-friendly hostel offering shared dorms and private rooms, nestled among lush coconut trees. It's a great spot for backpackers looking to meet fellow travelers.</p>
+                            <div class="d-inline-flex justify-content-between ">
+                                <span class="align-self-center">Starting as low as <b>$25</b> per night</span>
+                                <button class="btn text-white ms-5">Check Rates</button>
+                            </div>
+                        </div>
+                    </div>
+                    <hr class="mt-5" style="height:5px;border-width:0;;background-color:#5EA99D">
+                </div>
+            </div>
+
+            <div class="d-flex justify-content-center my-3">
+                <div class="row col-4 align-items-center ">
+                    <div class="d-flex justify-content-center align-items-center">
+                        <div class="flex-shrink-0 me-5">
+                            <img src="/src/images-videos/hotel-3.jpg" class="img-fluid" style="width: 27vw; height: 32vh;" alt="Hotel Image">
+                        </div>
+                        <div class="flex-grow-1">
+                            <h4>Wavecrest Inn</h4>
+                            <h6>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="32" fill="#5EA99D" class="bi bi-geo-alt me-2" viewBox="0 0 16 18">
+                                    <path d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10m0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6"/>
+                                </svg>
+                                Coral Bay
+                            </h6>
+                            <p class="py-2">A charming, family-run hotel with ocean views and easy access to the island’s best snorkeling spots. Guests rave about the homemade breakfasts and friendly service.
+
+                            </p>
+                            <div class="d-inline-flex justify-content-between ">
+                                <span class="align-self-center">Starting as low as <b>$79</b> per night</span>
+                                <button class="btn text-white ms-5">Check Rates</button>
+                            </div>
+                        </div>
+                    </div>
+                    <hr class="mt-5" style="height:5px;border-width:0;;background-color:#5EA99D">
+                </div>
+            </div>
+
+            <div class="d-flex justify-content-center my-3">
+                <div class="row col-4 align-items-center ">
+                    <div class="d-flex justify-content-center align-items-center">
+                        <div class="flex-shrink-0 me-5">
+                            <img src="/src/images-videos/hotel-4.jpg" class="img-fluid" style="width: 27vw; height: 32vh;" alt="Hotel Image">
+                        </div>
+                        <div class="flex-grow-1">
+                            <h4>The Driftwood Cottage</h4>
+                            <h6>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="32" fill="#5EA99D" class="bi bi-geo-alt me-2" viewBox="0 0 16 18">
+                                    <path d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10m0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6"/>
+                                </svg>
+                                Palm Coast
+                            </h6>
+                            <p class="py-2">A cozy, rustic bed and breakfast just steps from the beach. Known for its tranquil atmosphere and delicious local breakfasts.</p>
+                            <div class="d-inline-flex justify-content-between ">
+                                <span class="align-self-center">Starting as low as <b>$89</b> per night</span>
+                                <button class="btn text-white ms-5">Check Rates</button>
+                            </div>
+                        </div>
+                    </div>
+                    <hr class="mt-5" style="height:5px;border-width:0;;background-color:#5EA99D">
+                </div>
+            </div>
+
+            <div class="d-flex justify-content-center my-3">
+                <div class="row col-4 align-items-center ">
+                    <div class="d-flex justify-content-center align-items-center">
+                        <div class="flex-shrink-0 me-5">
+                            <img src="/src/images-videos/hotel-5.jpg" class="img-fluid" style="width: 27vw; height: 32vh;" alt="Hotel Image">
+                        </div>
+                        <div class="flex-grow-1">
+                            <h4>Lagoon Breeze Villas</h4>
+                            <h6>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="32" fill="#5EA99D" class="bi bi-geo-alt me-2" viewBox="0 0 16 18">
+                                    <path d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10m0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6"/>
+                                </svg>
+                                Turtle Lagoon
+                            </h6>
+                            <p class="py-2">A collection of private villas surrounded by tropical gardens and a serene lagoon. Ideal for families and small groups looking for a peaceful retreat.</p>
+                            <div class="d-inline-flex justify-content-between ">
+                                <span class="align-self-center">Starting as low as <b>$149</b> per night</span>
+                                <button class="btn text-white ms-5">Check Rates</button>
+                            </div>
+                        </div>
+                    </div>
+                    <hr class="mt-5" style="height:5px;border-width:0;;background-color:#5EA99D">
+                </div>
+            </div>
+
+            <div class="d-flex justify-content-center my-3">
+                <div class="row col-4 align-items-center ">
+                    <div class="d-flex justify-content-center align-items-center">
+                        <div class="flex-shrink-0 me-5">
+                            <img src="/src/images-videos/hotel-6.jpg" class="img-fluid" style="width: 27vw; height: 32vh;" alt="Hotel Image">
+                        </div>
+                        <div class="flex-grow-1">
+                            <h4>Harbor Lights Guesthouse</h4>
+                            <h6>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="32" fill="#5EA99D" class="bi bi-geo-alt me-2" viewBox="0 0 16 18">
+                                    <path d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10m0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6"/>
+                                </svg>
+                                Fisherman's Wharf
+                            </h6>
+                            <p class="py-2">A quaint guesthouse overlooking the marina, perfect for travelers who want to explore the vibrant local fish market and seaside restaurants.</p>
+                            <div class="d-inline-flex justify-content-between ">
+                                <span class="align-self-center">Starting as low as <b>$69</b> per night</span>
+                                <button class="btn text-white ms-5">Check Rates</button>
+                            </div>
+                        </div>
+                    </div>
+                    <hr class="mt-5" style="height:5px;border-width:0;;background-color:#5EA99D">
+                </div>
+            </div>
+
+            <div class="d-flex justify-content-center my-3">
+                <div class="row col-4 align-items-center ">
+                    <div class="d-flex justify-content-center align-items-center">
+                        <div class="flex-shrink-0 me-5">
+                            <img src="/src/images-videos/hotel-7.jpg" class="img-fluid" style="width: 27vw; height: 32vh;" alt="Hotel Image">
+                        </div>
+                        <div class="flex-grow-1">
+                            <h4>Island Roots Eco Lodge</h4>
+                            <h6>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="32" fill="#5EA99D" class="bi bi-geo-alt me-2" viewBox="0 0 16 18">
+                                    <path d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10m0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6"/>
+                                </svg>
+                                Rainforest Ridge
+                            </h6>
+                            <p class="py-2">An eco-friendly lodge set within the island’s dense jungle, offering treehouse-style cabins. It’s a haven for nature lovers and adventure seekers.</p>
+                            <div class="d-inline-flex justify-content-between ">
+                                <span class="align-self-center">Starting as low as <b>$59</b> per night</span>
+                                <button class="btn text-white ms-5">Check Rates</button>
+                            </div>
+                        </div>
+                    </div>
+                    <hr class="mt-5" style="height:5px;border-width:0;;background-color:#5EA99D">
+                </div>
+            </div>
+
+
+            <div class="d-flex justify-content-center my-3">
+                <div class="row col-4 align-items-center ">
+                    <div class="d-flex justify-content-center align-items-center">
+                        <div class="flex-shrink-0 me-5">
+                            <img src="/src/images-videos/hotel-8.jpg" class="img-fluid" style="width: 27vw; height: 32vh;" alt="Hotel Image">
+                        </div>
+                        <div class="flex-grow-1">
+                            <h4>Seaside Solace Bed & Breakfast</h4>
+                            <h6>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="32" fill="#5EA99D" class="bi bi-geo-alt me-2" viewBox="0 0 16 18">
+                                    <path d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10m0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6"/>
+                                </svg>
+                                Sandy Shores
+                            </h6>
+                            <p class="py-2">A picturesque bed and breakfast with direct beach access, famous for its morning yoga sessions and stunning sunrise views.</p>
+                            <div class="d-inline-flex justify-content-between ">
+                                <span class="align-self-center">Starting as low as <b>$69</b> per night</span>
+                                <button class="btn text-white ms-5">Check Rates</button>
+                            </div>
+                        </div>
+                    </div>
+                    <hr class="mt-5" style="height:5px;border-width:0;;background-color:#5EA99D">
+                </div>
+            </div>
+
+
+            <div class="d-flex justify-content-center my-3">
+                <div class="row col-4 align-items-center ">
+                    <div class="d-flex justify-content-center align-items-center">
+                        <div class="flex-shrink-0 me-5">
+                            <img src="/src/images-videos/hotel-9.jpg" class="img-fluid" style="width: 27vw; height: 32vh;" alt="Hotel Image">
+                        </div>
+                        <div class="flex-grow-1">
+                            <h4>The Pelican's Perch Hotel</h4>
+                            <h6>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="32" fill="#5EA99D" class="bi bi-geo-alt me-2" viewBox="0 0 16 18">
+                                    <path d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10m0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6"/>
+                                </svg>
+                                Windward Cliffs
+                            </h6>
+                            <p class="py-2">A cliffside hotel offering panoramic ocean views and fresh seafood dining. Known for its stunning terrace and birdwatching opportunities.</p>
+                            <div class="d-inline-flex justify-content-between ">
+                                <span class="align-self-center">Starting as low as <b>$119</b> per night</span>
+                                <button class="btn text-white ms-5">Check Rates</button>
+                            </div>
+                        </div>
+                    </div>
+                    <hr class="mt-5" style="height:5px;border-width:0;;background-color:#5EA99D">
+                </div>
+            </div>
+
+
+            <div class="d-flex justify-content-center my-3 mb-5">
+                <div class="row col-4 align-items-center ">
+                    <div class="d-flex justify-content-center align-items-center">
+                        <div class="flex-shrink-0 me-5">
+                            <img src="/src/images-videos/hotel-2.jpg" class="img-fluid" style="width: 27vw; height: 32vh;" alt="Hotel Image">
+                        </div>
+                        <div class="flex-grow-1">
+                            <h4>Tanitian Tides Resort</h4>
+                            <h6>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="32" fill="#5EA99D" class="bi bi-geo-alt me-2" viewBox="0 0 16 18">
+                                    <path d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10m0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6"/>
+                                </svg>
+                                Paradise Point
+                            </h6>
+                            <p class="py-2">The largest four-star resort on the island, boasting multiple pools, a spa, and direct beach access. It’s a top choice for those looking for luxury and relaxation.</p>
+                            <div class="d-inline-flex justify-content-between ">
+                                <span class="align-self-center">Starting as low as <b>$299</b> per night</span>
+                                <button class="btn text-white ms-5">Check Rates</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+        </section>
+    </div>
+</body>
+</html>
